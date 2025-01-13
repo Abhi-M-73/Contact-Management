@@ -30,15 +30,15 @@ function App() {
   };
 
   const handleDelete = (id) => {
-    setContacts(contacts.filter(contact => contact.id !== id));
+    const filterContact = contacts.filter(contact => contact.id !== id);
+    setContacts(filterContact);
   };
 
-  const contactsPerPage = 20;
-  const indexOfLastContact = currentPage * contactsPerPage;
-  const indexOfFirstContact = indexOfLastContact - contactsPerPage;
-  const currentContacts = contacts.slice(indexOfFirstContact, indexOfLastContact);
-
+  const contactsPerPage = 12;
+  const currentContacts = contacts.slice((currentPage - 1) * contactsPerPage, currentPage * contactsPerPage);
   const totalPages = Math.ceil(contacts.length / contactsPerPage);
+
+
 
   return (
     <div className="flex md:flex-row flex-col justify-center min-h-screen w-screen bg-gray-900">
@@ -47,7 +47,7 @@ function App() {
       </div>
       <div className="md:w-[75%] w-full p-3 flex flex-col items-center justify-between">
         <ContactList handleEdit={handleEdit} handleDelete={handleDelete} contacts={currentContacts} />
-        <Pagination currentPage={currentPage} totalPages={totalPages} setCurrentPage={setCurrentPage} />
+        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages}  />
       </div>
 
     </div>
