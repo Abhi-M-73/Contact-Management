@@ -4,78 +4,7 @@ import ContactList from "./components/ContactList";
 import Pagination from "./components/Pagination";
 
 function App() {
-  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts')) || [
-    {
-      id: 1,
-      name: "John Doe",
-      email: "johndoe@example.com",
-      phone: "+1 555-123-4567",
-      image: "https://via.placeholder.com/100?text=John"
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      email: "janesmith@example.com",
-      phone: "+1 555-987-6543",
-      image: "https://via.placeholder.com/100?text=Jane"
-    },
-    {
-      id: 3,
-      name: "Alex Johnson",
-      email: "alexjohnson@example.com",
-      phone: "+1 555-456-7890",
-      image: "https://via.placeholder.com/100?text=Alex"
-    },
-    {
-      id: 4,
-      name: "Emily Davis",
-      email: "emilydavis@example.com",
-      phone: "+1 555-321-6548",
-      image: "https://via.placeholder.com/100?text=Emily"
-    },
-    {
-      id: 5,
-      name: "Michael Brown",
-      email: "michaelbrown@example.com",
-      phone: "+1 555-654-3212",
-      image: "https://via.placeholder.com/100?text=Michael"
-    },
-    {
-      id: 6,
-      name: "Sarah Wilson",
-      email: "sarahwilson@example.com",
-      phone: "+1 555-741-8529",
-      image: "https://via.placeholder.com/100?text=Sarah"
-    },
-    {
-      id: 7,
-      name: "David Miller",
-      email: "davidmiller@example.com",
-      phone: "+1 555-963-2587",
-      image: "https://via.placeholder.com/100?text=David"
-    },
-    {
-      id: 8,
-      name: "Laura Taylor",
-      email: "laurataylor@example.com",
-      phone: "+1 555-852-9631",
-      image: "https://via.placeholder.com/100?text=Laura"
-    },
-    {
-      id: 9,
-      name: "Chris Anderson",
-      email: "chrisanderson@example.com",
-      phone: "+1 555-147-2583",
-      image: "https://via.placeholder.com/100?text=Chris"
-    },
-    {
-      id: 10,
-      name: "Olivia Martinez",
-      email: "oliviamartinez@example.com",
-      phone: "+1 555-369-1470",
-      image: "https://via.placeholder.com/100?text=Olivia"
-    }
-  ]);
+  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts')) || []);
   const [currentPage, setCurrentPage] = useState(1);
   const [editingContact, setEditingContact] = useState(null);
 
