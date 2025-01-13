@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const cloudinaryUrl = import.meta.env.VITE_CLOUDINARY_URL;
+const cloudinaryUrl = `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`;
 const cloudinaryPreset = import.meta.env.VITE_CLOUDINARY_PRESET;
 
 const ContactForm = ({ addOrUpdateContact, editingContact }) => {

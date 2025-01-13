@@ -34,7 +34,7 @@ function App() {
     setContacts(filterContact);
   };
 
-  const contactsPerPage = 12;
+  const contactsPerPage = 20;
   const currentContacts = contacts.slice((currentPage - 1) * contactsPerPage, currentPage * contactsPerPage);
   const totalPages = Math.ceil(contacts.length / contactsPerPage);
 
